@@ -15,7 +15,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
-                s3Upload(file:'index.html', bucket:'jenkinsdevopsfronteoi')
+                s3Upload(file:'index.html', bucket:'jenkinsdevopsfronteoi', path:'index.html')
             }
         }
     }
