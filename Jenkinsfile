@@ -1,9 +1,21 @@
 pipeline {
-    agent any 
+    agent any
+
     stages {
-        stage('Stage 1') {
+        stage('Build') {
             steps {
-                echo 'Hello world!' 
+                echo 'No build..'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'No test..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+                s3Upload(file:'index.html', bucket:'jenkinsdevopsfronteoi')
             }
         }
     }
